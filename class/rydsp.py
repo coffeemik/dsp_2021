@@ -38,7 +38,7 @@ defaultFile3= 'L:\\中島美雪2020\\中島みゆき0102_mp3\\中島みゆき「
 
 
 def getWavFromYoutube(
-    url= defaultUrl1,
+    url= defaultUrl0,
     play= True
     ):
     '''    
@@ -61,6 +61,8 @@ def getWavFromYoutube(
     fileName= defaultTmpFile  # provide a filename for youtube downloading
     filePath= stream.download(filename= fileName)
     fileName_wav= f'{fileName}.wav'
+    print(fileName)
+    print(fileName_wav)
 
     subprocess.run(f'ffmpeg -y -i {fileName} {fileName_wav}')    # .run() 會等
     #subprocess.Popen('ffmpeg -y -i _tmp_.mp3 _tmp_.wav') # .Popen() 不會等
